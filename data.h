@@ -1,5 +1,6 @@
 struct ResourceTuple
 {
+	int id;
 	int timestamp;
 	int resources;
 	int nodeId;
@@ -7,6 +8,7 @@ struct ResourceTuple
 
 struct JobTuple
 {
+	int id;
 	int timestamp;
 	int resources;
 	int duration;
@@ -33,6 +35,7 @@ void readFile(const char* fname, std::queue<T>& q)
 	while (ifs >> t)
 	{
 		++ count;
+		t.id = count;
 		q.emplace(std::move(t));
 	}
 	LOG("loaded items: " << count);

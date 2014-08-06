@@ -94,7 +94,7 @@ void Emulator::outSchedule()
 	{
 		o << "timestamp: " << s.first;
 		for (const JobTuple& j: s.second)
-			o << "\n    " << j.timestamp << " " << j.resources << " " << j.duration;
+			o << "\n    #" << j.id << ": " << j.timestamp << " " << j.resources << " " << j.duration;
 		o << std::endl;
 	}
 	o.close();
