@@ -16,7 +16,7 @@ private:
 		{
 			return j1.resources > j2.resources ||
 					(j1.resources == j2.resources && (j1.timestamp < j2.timestamp ||
-							(j1.timestamp == j2.timestamp && j1.duration > j2.duration)));
+							(j1.timestamp == j2.timestamp && j1.duration > j2.duration || (j1.duration == j2.duration && j1.id < j2.id))));
 		}
 	};
 
